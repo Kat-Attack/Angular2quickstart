@@ -20,4 +20,9 @@ export class HeroService {
     //     .then(() => this.getHeroes());
     // } // wait 2s before resolving
 
+    getHero(id: number): Promise<Hero> {
+    return this.getHeroes()
+                .then(heroes => heroes.find(hero => hero.id === id));
+    }
+
 }
